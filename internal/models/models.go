@@ -63,18 +63,18 @@ type Withdrawal struct {
 	BlockNumber   int64            `db:"block_number" json:"block_number"`
 	Confirmations int              `db:"confirmations" json:"confirmations"`
 	CreatedAt     time.Time        `db:"created_at" json:"created_at"`
-	SentAt        *time.Time        `db:"sent_at" json:"sent_at"`
-	ConfirmedAt   *time.Time        `db:"confirmed_at" json:"confirmed_at"`
+	SentAt        *time.Time       `db:"sent_at" json:"sent_at"`
+	ConfirmedAt   *time.Time       `db:"confirmed_at" json:"confirmed_at"`
 }
 
 // HotWallet represents hot wallet for a chain
 type HotWallet struct {
-	ID                int64     `db:"id" json:"id"`
-	Chain             Chain     `db:"chain" json:"chain"`
-	Address           string    `db:"address" json:"address"`
-	EncryptedKey      string    `db:"encrypted_key" json:"-"` // не возвращаем в API
-	Balance           string    `db:"balance" json:"balance"`
-	LastCheckedAt     time.Time `db:"last_checked_at" json:"last_checked_at"`
+	ID            int64     `db:"id" json:"id"`
+	Chain         Chain     `db:"chain" json:"chain"`
+	Address       string    `db:"address" json:"address"`
+	EncryptedKey  string    `db:"encrypted_key" json:"-"` // не возвращаем в API
+	Balance       string    `db:"balance" json:"balance"`
+	LastCheckedAt time.Time `db:"last_checked_at" json:"last_checked_at"`
 }
 
 // Transaction represents blockchain transaction
@@ -91,4 +91,3 @@ type Transaction struct {
 	Confirmations int       `db:"confirmations" json:"confirmations"`
 	CreatedAt     time.Time `db:"created_at" json:"created_at"`
 }
-
